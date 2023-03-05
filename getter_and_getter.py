@@ -1,5 +1,6 @@
 from errors import ErrorMail
 
+
 class UserMail:
     def __init__(self, login, email):
         self.login = login
