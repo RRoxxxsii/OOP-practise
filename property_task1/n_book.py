@@ -4,7 +4,7 @@ class Notebook:
 
     @property
     def notes_list(self):
-        return *self._notes, '\n'
+        yield *self._notes, '\n'
 
 
 
