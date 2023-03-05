@@ -6,14 +6,17 @@ class UserMail:
         self.__email = email
 
     @property
-    def get_email(self):
+    def email_func(self):
         return self.__email
 
-    @get_email.getter
-    def set_email(self, new_email):
+    @email_func.setter
+    def email_func(self, new_email):
         if new_email.count('@') == 1 and '@.' in new_email:
-            return new_email
-        raise ErrorMail('')
+            self.__email = new_email
+            print(f'Почта была изменена: {new_email}')
+        else:
+            raise ErrorMail(new_email)
+
 
 
 
