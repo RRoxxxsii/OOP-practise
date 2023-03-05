@@ -1,3 +1,5 @@
+from errors import ErrorDollars, ErrorCents
+
 class Money:
     def __init__(self, dollar, cent):
         self.dollar = dollar
@@ -10,7 +12,19 @@ class Money:
 
     @dollars.setter
     def dollars(self, number):
-        self.dollar = number
+        if isinstance(number, int):
+            self.dollar = number
+        raise ErrorDollars
 
+    @property
+    def cents(self):
+        return self.cent
+
+    @cents.setter
+    def cents(self, number):
+        if isinstance(number, int) and number <= 100:
+            self.cent = number
+        else:
+            raise ErrorCents
 
 
