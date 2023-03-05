@@ -1,0 +1,2 @@
+class ErrorMail(Exception):
+    pass
